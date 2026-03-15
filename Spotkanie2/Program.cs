@@ -72,15 +72,15 @@ double zaokraglona = Math.Round(malaLiczba, 3);
 //Program 1
 // Zapytaj o imie i wiek , nastepnie wypisz je na konsole
 
-Console.WriteLine("Podaj swoje imie:");
-string imieUzytkownika = Console.ReadLine();
-
-Console.WriteLine("Podaj swój wiek:");
-int wiekUzytkownika = int.Parse(Console.ReadLine());
-
-int rokUrodzenia = DateTime.UtcNow.Year - wiekUzytkownika;
-
-Console.WriteLine("Imie użytkownika to " + imieUzytkownika + "\nUrodziłaś się w roku " + rokUrodzenia );
+// Console.WriteLine("Podaj swoje imie:");
+// string imieUzytkownika = Console.ReadLine();
+//
+// Console.WriteLine("Podaj swój wiek:");
+// int wiekUzytkownika = int.Parse(Console.ReadLine());
+//
+// int rokUrodzenia = DateTime.UtcNow.Year - wiekUzytkownika;
+//
+// Console.WriteLine("Imie użytkownika to " + imieUzytkownika + "\nUrodziłaś się w roku " + rokUrodzenia );
 
 
 //Program 2 - instrukcje warunkowe
@@ -88,3 +88,42 @@ Console.WriteLine("Imie użytkownika to " + imieUzytkownika + "\nUrodziłaś si�
 //Wypisz uzyskaną ocenę
 //>=50% - 3.0 itd
 
+Console.WriteLine("Podaj liczbe zdoytych punktów:");
+double zdobytePunkty = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Podaj maksymalną liczbę punktów do zdobycia:");
+int  maksymalnePunkty = int.Parse(Console.ReadLine());
+
+double wynikProcentowy = zdobytePunkty/maksymalnePunkty*100;
+wynikProcentowy = Math.Round(wynikProcentowy, 2);
+
+
+double ocena;
+
+if (wynikProcentowy < 50)
+{
+   ocena = 2.0;
+}
+else if (wynikProcentowy <60)
+{
+   ocena = 3.0;
+}
+else if (wynikProcentowy <70)
+{
+   ocena = 3.5;
+}
+else if (wynikProcentowy <80)
+{
+   ocena = 4.0;
+}
+else if (wynikProcentowy <80)
+{
+   ocena = 4.5;
+}
+else
+{
+   ocena = 5.0;
+}
+
+
+Console.WriteLine("Ocena końcowa:" + ocena);
