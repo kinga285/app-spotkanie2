@@ -88,42 +88,58 @@ double zaokraglona = Math.Round(malaLiczba, 3);
 //Wypisz uzyskaną ocenę
 //>=50% - 3.0 itd
 
-Console.WriteLine("Podaj liczbe zdoytych punktów:");
-double zdobytePunkty = double.Parse(Console.ReadLine());
-
-Console.WriteLine("Podaj maksymalną liczbę punktów do zdobycia:");
-int  maksymalnePunkty = int.Parse(Console.ReadLine());
-
-double wynikProcentowy = zdobytePunkty/maksymalnePunkty*100;
-wynikProcentowy = Math.Round(wynikProcentowy, 2);
-
-
-double ocena;
-
-if (wynikProcentowy < 50)
+try
 {
-   ocena = 2.0;
+   Console.WriteLine("Podaj liczbe zdoytych punktów:");
+   double zdobytePunkty = double.Parse(Console.ReadLine());
+
+   Console.WriteLine("Podaj maksymalną liczbę punktów do zdobycia:");
+   int  maksymalnePunkty = int.Parse(Console.ReadLine());
+
+   double wynikProcentowy = zdobytePunkty/maksymalnePunkty*100;
+   wynikProcentowy = Math.Round(wynikProcentowy, 2);
+   
+   double ocena;
+
+   if (wynikProcentowy < 50)
+   {
+      ocena = 2.0;
+   }
+   else if (wynikProcentowy < 60)
+   {
+      ocena = 3.0;
+   }
+   else if (wynikProcentowy < 70)
+   {
+      ocena = 3.5;
+   }
+   else if (wynikProcentowy < 80)
+   {
+      ocena = 4.0;
+   }
+   else if (wynikProcentowy < 80)
+   {
+      ocena = 4.5;
+   }
+   else
+   {
+      ocena = 5.0;
+   }
+   
+   Console.WriteLine("Ocena końcowa:" + ocena);
+   
 }
-else if (wynikProcentowy <60)
+catch (FormatException e) //dowlny błąd, e- zmienna ze szczegółami
 {
-   ocena = 3.0;
+   Console.WriteLine("Podałeś liczbę zmiennoprzecinkową " + e.Message);
+   //Console.WriteLine(e.StackTrace); //stos wywołań (tzn. w jaki sposób została wywołana aplikacja , stacktrace)
 }
-else if (wynikProcentowy <70)
+catch (Exception e) 
 {
-   ocena = 3.5;
-}
-else if (wynikProcentowy <80)
-{
-   ocena = 4.0;
-}
-else if (wynikProcentowy <80)
-{
-   ocena = 4.5;
-}
-else
-{
-   ocena = 5.0;
+   Console.WriteLine("Wystąpił nieoczekiwnay: " + e.Message); //Łapie wszytkie błędy
+   //Console.WriteLine(e.StackTrace); //stos wywołań (tzn. w jaki sposób została wywołana aplikacja , stacktrace)
 }
 
-
-Console.WriteLine("Ocena końcowa:" + ocena);
+// AND && (ampersand)
+// OR ||
+// NOT !
