@@ -70,6 +70,7 @@ double zaokraglona = Math.Round(malaLiczba, 3);
 
 
 //Program 1
+
 // Zapytaj o imie i wiek , nastepnie wypisz je na konsole
 
 // Console.WriteLine("Podaj swoje imie:");
@@ -84,9 +85,15 @@ double zaokraglona = Math.Round(malaLiczba, 3);
 
 
 //Program 2 - instrukcje warunkowe
+
 //Wpisz dwie liczby - ile punktów z testu otrzymano; ile było maksymalnie do zdobycia
 //Wypisz uzyskaną ocenę
 //>=50% - 3.0 itd
+
+
+
+/*
+ 
 
 try
 {
@@ -107,7 +114,7 @@ try
       Console.WriteLine("Podaj maksymalną liczbę punktów do zdobycia:");
       maksymalnePunkty = int.Parse(Console.ReadLine());
       
-      File.WriteAllText(sciezka,maksymalnePunkty+"");
+      File.WriteAllText(sciezka,maksymalnePunkty+""); // +"" trik aby szybko zamienić int na string
    }
 
    double wynikProcentowy = zdobytePunkty/maksymalnePunkty*100;
@@ -157,3 +164,69 @@ catch (Exception e)
 // AND && (ampersand)
 // OR ||
 // NOT !
+
+*/
+
+
+// Program 3 - problem różnicy impednacji - sql injection
+
+/*
+
+Console.WriteLine("Podaj login: ");
+string login = Console.ReadLine();
+
+Console.WriteLine("Podaj hasło: ");
+string haslo = Console.ReadLine();
+
+
+string sql = "SELECT * FROM User WHERE Login='"+login+"' AND Haslo='"+haslo+"'";
+Console.WriteLine(sql);
+
+*/
+   
+   
+// Program 4 - tablice, kolekcje i pętle 
+
+//Tablice
+
+double[] oceny = new double[10]; //inicjalizacja tablicy [0,0,0,0,0,0,0,0,0,0]. Domyślnie są tu zera!
+oceny[0] = 120; //w nawiasie kwadratowym są podawane indeksy eleementów tablicy
+oceny[5] = 11;
+oceny[9] = -1;
+
+//Nie możemy zmieniać rozmiaru tablicy! (w Pythonie można, ale tam tablice są tablicami dynamicznymi)
+
+string[] imiona =
+{
+   "Jan", "Andrzej", "Julie", "Julie"
+};
+
+int rozmiar = imiona.Length;
+
+Console.WriteLine(rozmiar);
+
+//Kolekcje - ważne na rozmowę o pracę (kolekcje to termin ogólny)
+//Dynamiczna tablica - sama się rozszerza
+//To sammo co w Python -> Array
+//Tablice są szybsze niż kolekcje. Kolekcja pod spodem tworzy nową tablice i przepisuje dane
+
+List<string> nazwiska=new List<string>();
+nazwiska.Add("Kowalski");
+nazwiska.Add("Smith");
+nazwiska.Add("Williams");
+
+nazwiska.Remove("Kowalski");
+Console.WriteLine(nazwiska[0]);
+Console.WriteLine(nazwiska.Count);
+
+//Pętle
+//+= dodaj do tego co było wczesniej 
+double[] oceny2 = new double[] { 4, 3, 5, 3, 4 };
+double srednia = 0;
+srednia=srednia+oceny2[0];
+
+   
+   
+
+
+
