@@ -93,8 +93,22 @@ try
    Console.WriteLine("Podaj liczbe zdoytych punktów:");
    double zdobytePunkty = double.Parse(Console.ReadLine());
 
-   Console.WriteLine("Podaj maksymalną liczbę punktów do zdobycia:");
-   int  maksymalnePunkty = int.Parse(Console.ReadLine());
+   int maksymalnePunkty=0;
+   string sciezka = @"C:\Users\pd5138\Desktop\liczba.txt";
+   bool czyPlikIstnieje = File.Exists(sciezka); //@ oznacza że ma wyłączyc znaki specjalne
+   
+   if (czyPlikIstnieje)
+   {
+      //wczytaj z  dysku
+      maksymalnePunkty = int.Parse(File.ReadAllText(sciezka));
+   }
+   else
+   {
+      Console.WriteLine("Podaj maksymalną liczbę punktów do zdobycia:");
+      maksymalnePunkty = int.Parse(Console.ReadLine());
+      
+      File.WriteAllText(sciezka,maksymalnePunkty+"");
+   }
 
    double wynikProcentowy = zdobytePunkty/maksymalnePunkty*100;
    wynikProcentowy = Math.Round(wynikProcentowy, 2);
