@@ -203,7 +203,6 @@ string[] imiona =
 
 int rozmiar = imiona.Length;
 
-Console.WriteLine(rozmiar);
 
 //Kolekcje - ważne na rozmowę o pracę (kolekcje to termin ogólny)
 //Dynamiczna tablica - sama się rozszerza
@@ -216,17 +215,19 @@ nazwiska.Add("Smith");
 nazwiska.Add("Williams");
 
 nazwiska.Remove("Kowalski");
-Console.WriteLine(nazwiska[0]);
-Console.WriteLine(nazwiska.Count);
+//Console.WriteLine(nazwiska[0]);
+//Console.WriteLine(nazwiska.Count);
 
 //Pętle
 //+= dodaj do tego co było wczesniej 
 double[] oceny2 = new double[] { 4, 3, 5, 3, 4 };
 double srednia = 0;
-srednia=srednia+oceny2[0];
-
-   
-   
 
 
+for (int i = 0; i < oceny2.Length; i++)
+{
+   srednia += oceny[i];
+}
 
+srednia = srednia/oceny2.Length;
+Console.WriteLine("Srednia: " + srednia);
