@@ -68,7 +68,7 @@ double malaLiczba = 10.34467532;
 double zaokraglona = Math.Round(malaLiczba, 3);
 //Console.WriteLine(zaokraglona);
 
-
+//zmiana
 //Program 1
 
 // Zapytaj o imie i wiek , nastepnie wypisz je na konsole
